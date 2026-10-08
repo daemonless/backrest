@@ -1,0 +1,22 @@
+#!/bin/sh
+# Backrest s6 service
+
+export HOME=/config
+export BACKREST_CONFIG="${BACKREST_CONFIG:-/config/config.json}"
+export BACKREST_DATA="${BACKREST_DATA:-/config/data}"
+export BACKREST_PORT="${BACKREST_PORT:-0.0.0.0:9898}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-/config/cache}"
+export BACKREST_RESTIC_COMMAND="${BACKREST_RESTIC_COMMAND:-/usr/local/bin/restic}"
+export BACKREST_RCLONE_COMMAND="${BACKREST_RCLONE_COMMAND:-/usr/local/bin/rclone}"
+
+# Signal readiness once the healthcheck passes (FD 3, see notification-fd)
+s6-ready-when /healthz
+
+echo "[INFO] Starting Backrest on ${BACKREST_PORT}..."
+
+cd /config
+exec s6-setuidgid bsd \
+    /usr/local/bin/backrest \
+    -bind-address "${BACKREST_PORT}" \
+    -config-file "${BACKREST_CONFIG}" \
+    -data-dir "${BACKREST_DATA}"

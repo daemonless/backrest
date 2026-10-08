@@ -1,0 +1,45 @@
+name: backrest
+
+x-daemonless:
+  title: "Backrest"
+  icon: ":material-backup-restore:"
+  category: "Utilities"
+  description: "Backrest is a web-accessible backup solution built on top of restic. Backrest provides a WebUI which wraps the restic CLI and makes it easy to create repos, browse snapshots, and restore files. Additionally, Backrest can run in the background and take an opinionated approach to scheduling snapshots and orchestrating repo health operations."
+  upstream_url: "https://github.com/garethgeorge/backrest"
+  web_url: "https://garethgeorge.github.io/backrest"
+  freshports_url: "https://www.freshports.org/sysutils/backrest/"
+  user: "bsd"
+  mlock: false
+  community: "Discord:https://discord.gg/Kb9tkhecZT"
+
+  docs:
+    env:
+      PUID: "User ID for the application process"
+      PGID: "Group ID for the application process"
+      TZ: "Timezone for the container"
+      BACKREST_PORT: "Address and port to bind to (default: 0.0.0.0:9898)"
+      BACKREST_CONFIG: "Path to configuration file (default: /config/config.json)"
+      BACKREST_DATA: "Path to internal data directory (default: /config/data)"
+    volumes:
+      /config: "Configuration directory (config.json, cache, and state)"
+      /data: "Files to back up, or a local repository; mounted as-is, never re-owned"
+    ports:
+      9898: "Web UI"
+
+services:
+  backrest:
+    image: ghcr.io/daemonless/backrest:latest
+    container_name: backrest
+    restart: always
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+
+    volumes:
+      - /path/to/containers/backrest/config:/config
+      - /path/to/containers/backrest/data:/data
+
+    ports:
+      - 9898:9898

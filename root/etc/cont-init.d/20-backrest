@@ -1,0 +1,6 @@
+#!/bin/sh
+# Ensure directories and permissions for Backrest
+
+mkdir -p /config/data /config/cache /data
+# Not /data: it is the user's own files to back up, never re-owned.
+chown -R bsd:bsd /config

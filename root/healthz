@@ -1,0 +1,4 @@
+#!/bin/sh
+# Daemonless standard healthcheck for backrest
+
+fetch -qo /dev/null "http://127.0.0.1:9898/" >/dev/null 2>&1

@@ -1,0 +1,62 @@
+ARG BASE_VERSION=15.1
+FROM ghcr.io/daemonless/base:${BASE_VERSION}
+
+ARG FREEBSD_ARCH=amd64
+ARG PACKAGES="rclone restic ca_root_nss"
+ARG APP_VERSION=""
+ARG UPSTREAM_URL="https://api.github.com/repos/garethgeorge/backrest/releases/latest"
+ARG UPSTREAM_JQ=".tag_name"
+
+# --- Metadata (Injected by Generator) ---
+LABEL org.opencontainers.image.title="{{ title }}" \
+      org.opencontainers.image.description="{{ description }}" \
+      org.opencontainers.image.source="{{ repo_url }}" \
+      org.opencontainers.image.url="{{ web_url }}" \
+      org.opencontainers.image.licenses="GPL-3.0-only" \
+      org.opencontainers.image.vendor="daemonless" \
+      org.opencontainers.image.authors="daemonless" \
+      io.daemonless.category="{{ category }}" \
+      io.daemonless.port="9898" \
+      io.daemonless.arch="${FREEBSD_ARCH}" \
+      io.daemonless.pkg-source="upstream" \
+      io.daemonless.upstream-url="${UPSTREAM_URL}" \
+      io.daemonless.upstream-jq="${UPSTREAM_JQ}" \
+      io.daemonless.packages="${PACKAGES}"
+
+# Install dependencies
+RUN pkg update && \
+    pkg install -y ${PACKAGES} && \
+    pkg clean -ay && \
+    rm -rf /var/cache/pkg/* /var/db/pkg/repos/*
+
+# Download and install Backrest from official GitHub release
+RUN if [ -z "${APP_VERSION}" ]; then \
+        APP_VERSION=$(fetch -qo - "${UPSTREAM_URL}" | jq -r "${UPSTREAM_JQ}"); \
+    fi && \
+    CLEAN_VER="${APP_VERSION#v}" && \
+    case "${FREEBSD_ARCH}" in \
+        amd64)   ARCH_SUFFIX="x86_64" ;; \
+        aarch64) ARCH_SUFFIX="arm64" ;; \
+        *)       echo "Unsupported arch ${FREEBSD_ARCH}" && exit 1 ;; \
+    esac && \
+    TARBALL="backrest_Freebsd_${ARCH_SUFFIX}.tar.gz" && \
+    DOWNLOAD_URL="https://github.com/garethgeorge/backrest/releases/download/${APP_VERSION}/${TARBALL}" && \
+    echo "Downloading Backrest ${CLEAN_VER} from ${DOWNLOAD_URL}" && \
+    fetch -qo /tmp/backrest.tar.gz "${DOWNLOAD_URL}" && \
+    tar -xzf /tmp/backrest.tar.gz -C /usr/local/bin backrest && \
+    chmod 755 /usr/local/bin/backrest && \
+    rm /tmp/backrest.tar.gz && \
+    mkdir -p /app && \
+    echo "${CLEAN_VER}" > /app/version
+
+# Copy root filesystem
+COPY root/ /
+
+# Set permissions
+RUN chmod +x /etc/services.d/backrest/run /healthz
+
+# Expose
+EXPOSE 9898
+
+# Volumes
+VOLUME /config /data
