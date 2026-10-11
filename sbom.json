@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-08T21:12:30Z",
+  "generated": "2026-10-11T07:20:41Z",
   "image": "backrest",
   "tags": {
     "latest-amd64": {
       "app_version": "1.14.1",
       "arch": "amd64",
-      "generated": "2026-10-08T21:11:51Z",
+      "generated": "2026-10-11T07:19:59Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -287,7 +287,7 @@
               "BSD2CLAUSE"
             ],
             "name": "pkg",
-            "version": "2.7.5"
+            "version": "2.8.4"
           },
           {
             "licenses": [
@@ -301,7 +301,7 @@
               "BSD2CLAUSE"
             ],
             "name": "restic",
-            "version": "0.19.1_3"
+            "version": "0.19.1_4"
           },
           {
             "licenses": [
@@ -1832,9 +1832,9 @@
       }
     },
     "pkg-amd64": {
-      "app_version": "1.13.0_5",
+      "app_version": "1.14.1_3",
       "arch": "amd64",
-      "generated": "2026-10-08T21:10:06Z",
+      "generated": "2026-10-11T07:20:00Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -2081,7 +2081,7 @@
               "GPLv3"
             ],
             "name": "backrest",
-            "version": "1.13.0_5"
+            "version": "1.14.1_3"
           },
           {
             "licenses": [
@@ -2123,7 +2123,7 @@
               "BSD2CLAUSE"
             ],
             "name": "pkg",
-            "version": "2.7.5"
+            "version": "2.8.4"
           },
           {
             "licenses": [
@@ -2137,7 +2137,7 @@
               "BSD2CLAUSE"
             ],
             "name": "restic",
-            "version": "0.19.1_3"
+            "version": "0.19.1_4"
           },
           {
             "licenses": [
@@ -2203,7 +2203,7 @@
           {
             "name": "connectrpc.com/connect",
             "purl": "",
-            "version": "v1.19.1"
+            "version": "v1.20.0"
           },
           {
             "name": "github.com/Azure/azure-sdk-for-go/sdk/azcore",
@@ -2651,6 +2651,11 @@
             "version": "v1.0.1"
           },
           {
+            "name": "github.com/eclipse/paho.golang",
+            "purl": "",
+            "version": "v0.23.0"
+          },
+          {
             "name": "github.com/elithrar/simple-scrypt",
             "purl": "",
             "version": "v1.4.1"
@@ -2803,7 +2808,7 @@
           {
             "name": "github.com/golang-jwt/jwt/v5",
             "purl": "",
-            "version": "v5.3.0"
+            "version": "v5.3.1"
           },
           {
             "name": "github.com/google/btree",
@@ -2844,6 +2849,11 @@
             "name": "github.com/gorilla/schema",
             "purl": "",
             "version": "v1.4.1"
+          },
+          {
+            "name": "github.com/gorilla/websocket",
+            "purl": "",
+            "version": "v1.5.3"
           },
           {
             "name": "github.com/hashicorp/errwrap",
@@ -2993,12 +3003,12 @@
           {
             "name": "github.com/mattn/go-colorable",
             "purl": "",
-            "version": "v0.1.14"
+            "version": "v0.1.15"
           },
           {
             "name": "github.com/mattn/go-isatty",
             "purl": "",
-            "version": "v0.0.20"
+            "version": "v0.0.22"
           },
           {
             "name": "github.com/mattn/go-runewidth",
@@ -3058,7 +3068,12 @@
           {
             "name": "github.com/ncruces/go-sqlite3",
             "purl": "",
-            "version": "v0.30.0"
+            "version": "v0.35.1"
+          },
+          {
+            "name": "github.com/ncruces/go-sqlite3-wasm/v3",
+            "purl": "",
+            "version": "v3.1.35302"
           },
           {
             "name": "github.com/ncruces/julianday",
@@ -3073,7 +3088,7 @@
           {
             "name": "github.com/nicholas-fedor/shoutrrr",
             "purl": "",
-            "version": "v0.13.1"
+            "version": "v0.16.1"
           },
           {
             "name": "github.com/nwaples/rardecode/v2",
@@ -3168,12 +3183,12 @@
           {
             "name": "github.com/prometheus/common",
             "purl": "",
-            "version": "v0.67.2"
+            "version": "v0.69.0"
           },
           {
             "name": "github.com/prometheus/procfs",
             "purl": "",
-            "version": "v0.19.2"
+            "version": "v0.21.0"
           },
           {
             "name": "github.com/putdotio/go-putio/putio",
@@ -3321,11 +3336,6 @@
             "version": "v0.0.0-20260717075258-c6acd6a5bd04"
           },
           {
-            "name": "github.com/tetratelabs/wazero",
-            "purl": "",
-            "version": "v1.10.1"
-          },
-          {
             "name": "github.com/tinylib/msgp",
             "purl": "",
             "version": "v1.6.1"
@@ -3468,12 +3478,12 @@
           {
             "name": "go.uber.org/zap",
             "purl": "",
-            "version": "v1.27.0"
+            "version": "v1.28.0"
           },
           {
             "name": "go.yaml.in/yaml/v2",
             "purl": "",
-            "version": "v2.4.3"
+            "version": "v2.4.4"
           },
           {
             "name": "go.yaml.in/yaml/v3",
@@ -3493,7 +3503,7 @@
           {
             "name": "golang.org/x/crypto",
             "purl": "",
-            "version": "v0.44.0"
+            "version": "v0.53.0"
           },
           {
             "name": "golang.org/x/exp",
@@ -3508,7 +3518,7 @@
           {
             "name": "golang.org/x/net",
             "purl": "",
-            "version": "v0.47.0"
+            "version": "v0.56.0"
           },
           {
             "name": "golang.org/x/oauth2",
@@ -3523,17 +3533,17 @@
           {
             "name": "golang.org/x/sys",
             "purl": "",
-            "version": "v0.39.0"
+            "version": "v0.46.0"
           },
           {
             "name": "golang.org/x/term",
             "purl": "",
-            "version": "v0.38.0"
+            "version": "v0.44.0"
           },
           {
             "name": "golang.org/x/text",
             "purl": "",
-            "version": "v0.31.0"
+            "version": "v0.38.0"
           },
           {
             "name": "golang.org/x/time",
@@ -3553,22 +3563,22 @@
           {
             "name": "google.golang.org/genproto/googleapis/api",
             "purl": "",
-            "version": "v0.0.0-20251103181224-f26f9409b101"
+            "version": "v0.0.0-20260622175928-b703f567277d"
           },
           {
             "name": "google.golang.org/genproto/googleapis/rpc",
             "purl": "",
-            "version": "v0.0.0-20251103181224-f26f9409b101"
+            "version": "v0.0.0-20260622175928-b703f567277d"
           },
           {
             "name": "google.golang.org/grpc",
             "purl": "",
-            "version": "v1.76.0"
+            "version": "v1.81.1"
           },
           {
             "name": "google.golang.org/protobuf",
             "purl": "",
-            "version": "v1.36.10"
+            "version": "v1.36.11"
           },
           {
             "name": "gopkg.in/natefinch/lumberjack.v2",
@@ -3603,7 +3613,7 @@
           {
             "name": "stdlib",
             "purl": "",
-            "version": "v1.26.0"
+            "version": "v1.26.8"
           },
           {
             "name": "storj.io/common",
@@ -3647,20 +3657,20 @@
       "summary": {
         "dotnet": 0,
         "freebsd": 45,
-        "go": 296,
+        "go": 298,
         "java": 0,
         "node": 0,
         "php": 0,
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 341
+        "total": 343
       }
     },
     "pkg-latest-amd64": {
       "app_version": "1.14.1_3",
       "arch": "amd64",
-      "generated": "2026-10-08T21:10:23Z",
+      "generated": "2026-10-11T07:19:44Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -3914,7 +3924,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.130"
+            "version": "3.131"
           },
           {
             "licenses": [
