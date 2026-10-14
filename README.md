@@ -41,9 +41,9 @@ services:
       - PUID=1000  # User ID for the application process
       - PGID=1000  # Group ID for the application process
       - TZ=UTC  # Timezone for the container
-      - BACKREST_PORT=  # Address and port to bind to (default: 0.0.0.0:9898)
-      - BACKREST_CONFIG=  # Path to configuration file (default: /config/config.json)
-      - BACKREST_DATA=  # Path to internal data directory (default: /config/data)
+      # - BACKREST_PORT=  # Address and port to bind to (default: 0.0.0.0:9898)
+      # - BACKREST_CONFIG=  # Path to configuration file (default: /config/config.json)
+      # - BACKREST_DATA=  # Path to internal data directory (default: /config/data)
     volumes:
       - "/containers/backrest:/config"
       - "/containers/backrest/data:/data"
@@ -65,9 +65,6 @@ DIRECTOR_PROJECT=backrest
 PUID=1000
 PGID=1000
 TZ=UTC
-BACKREST_PORT=
-BACKREST_CONFIG=
-BACKREST_DATA=
 ```
 
 **appjail-director.yml**:
@@ -90,9 +87,6 @@ services:
         - PUID: !ENV '${PUID}'
         - PGID: !ENV '${PGID}'
         - TZ: !ENV '${TZ}'
-        - BACKREST_PORT: !ENV '${BACKREST_PORT}'
-        - BACKREST_CONFIG: !ENV '${BACKREST_CONFIG}'
-        - BACKREST_DATA: !ENV '${BACKREST_DATA}'
     volumes:
       - backrest: /config
       - backrest_data: /data
@@ -139,9 +133,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=UTC
-      - BACKREST_PORT=
-      - BACKREST_CONFIG=
-      - BACKREST_DATA=
     volumes:
       - "/containers/backrest:/config"
       - "/containers/backrest/data:/data"
