@@ -5,7 +5,7 @@
 # --------------------------------------------------------------------------
 
 ARG BASE_VERSION=15.1
-FROM ghcr.io/daemonless/base:${BASE_VERSION}
+FROM ghcr.io/daemonless/base-exec:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
 ARG PACKAGES="rclone restic ca_root_nss"
@@ -57,9 +57,12 @@ RUN if [ -z "${APP_VERSION}" ]; then \
 
 # Copy root filesystem
 COPY root/ /
+RUN chmod +x /daemonless/libexec/backrest /daemonless/init.d/*
+
+CMD ["/daemonless/libexec/backrest"]
 
 # Set permissions
-RUN chmod +x /etc/services.d/backrest/run /healthz
+RUN chmod +x /healthz
 
 # Expose
 EXPOSE 9898

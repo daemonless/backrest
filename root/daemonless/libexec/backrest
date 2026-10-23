@@ -1,5 +1,5 @@
 #!/bin/sh
-# Backrest s6 service
+# Start backrest; /init has already dropped to the run user.
 
 export HOME=/config
 export BACKREST_CONFIG="${BACKREST_CONFIG:-/config/config.json}"
@@ -9,13 +9,10 @@ export XDG_CACHE_HOME="${XDG_CACHE_HOME:-/config/cache}"
 export BACKREST_RESTIC_COMMAND="${BACKREST_RESTIC_COMMAND:-/usr/local/bin/restic}"
 export BACKREST_RCLONE_COMMAND="${BACKREST_RCLONE_COMMAND:-/usr/local/bin/rclone}"
 
-# Signal readiness once the healthcheck passes (FD 3, see notification-fd)
-s6-ready-when /healthz
-
 echo "[INFO] Starting Backrest on ${BACKREST_PORT}..."
 
 cd /config
-exec s6-setuidgid bsd \
+exec \
     /usr/local/bin/backrest \
     -bind-address "${BACKREST_PORT}" \
     -config-file "${BACKREST_CONFIG}" \
