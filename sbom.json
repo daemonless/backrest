@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-23T08:05:03Z",
+  "generated": "2026-10-23T18:21:05Z",
   "image": "backrest",
   "tags": {
     "latest-amd64": {
       "app_version": "1.14.1",
       "arch": "amd64",
-      "generated": "2026-10-23T07:50:44Z",
+      "generated": "2026-10-23T18:09:01Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1803,7 +1803,7 @@
     "pkg-amd64": {
       "app_version": "1.14.1_4",
       "arch": "amd64",
-      "generated": "2026-10-23T07:50:01Z",
+      "generated": "2026-10-23T18:04:44Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -3606,9 +3606,9 @@
       }
     },
     "pkg-latest-amd64": {
-      "app_version": "1.14.1_4",
+      "app_version": "1.14.1_5",
       "arch": "amd64",
-      "generated": "2026-10-23T07:50:35Z",
+      "generated": "2026-10-23T18:04:00Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -3855,14 +3855,14 @@
               "GPLv3"
             ],
             "name": "backrest",
-            "version": "1.14.1_4"
+            "version": "1.14.1_5"
           },
           {
             "licenses": [
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.131"
+            "version": "3.131.1"
           },
           {
             "licenses": [
@@ -3897,14 +3897,14 @@
               "MIT"
             ],
             "name": "rclone",
-            "version": "1.75.2"
+            "version": "1.75.2_1"
           },
           {
             "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "restic",
-            "version": "0.19.1_5"
+            "version": "0.19.1_6"
           }
         ],
         "go": [
@@ -5356,7 +5356,7 @@
           {
             "name": "stdlib",
             "purl": "",
-            "version": "v1.27.2"
+            "version": "v1.27.3"
           },
           {
             "name": "storj.io/common",
