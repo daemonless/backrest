@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-23T22:30:24Z",
+  "generated": "2026-11-03T08:42:50Z",
   "image": "backrest",
   "tags": {
     "latest-aarch64": {
       "app_version": "1.14.1",
       "arch": "aarch64",
-      "generated": "2026-10-23T22:28:44Z",
+      "generated": "2026-11-03T08:40:53Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -189,7 +189,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p5"
+            "version": "15.1p6"
           },
           {
             "licenses": [
@@ -252,7 +252,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.131"
+            "version": "3.132"
           },
           {
             "licenses": [
@@ -287,14 +287,14 @@
               "MIT"
             ],
             "name": "rclone",
-            "version": "1.75.2"
+            "version": "1.75.2_1"
           },
           {
             "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "restic",
-            "version": "0.19.1_5"
+            "version": "0.19.1_6"
           }
         ],
         "go": [
@@ -1801,9 +1801,9 @@
       }
     },
     "pkg-aarch64": {
-      "app_version": "1.14.1_4",
+      "app_version": "1.14.1_5",
       "arch": "aarch64",
-      "generated": "2026-10-23T22:28:48Z",
+      "generated": "2026-11-03T08:40:58Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1987,7 +1987,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p5"
+            "version": "15.1p6"
           },
           {
             "licenses": [
@@ -2050,14 +2050,14 @@
               "GPLv3"
             ],
             "name": "backrest",
-            "version": "1.14.1_4"
+            "version": "1.14.1_5"
           },
           {
             "licenses": [
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.131"
+            "version": "3.132"
           },
           {
             "licenses": [
@@ -2092,14 +2092,14 @@
               "MIT"
             ],
             "name": "rclone",
-            "version": "1.75.2"
+            "version": "1.75.2_1"
           },
           {
             "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "restic",
-            "version": "0.19.1_5"
+            "version": "0.19.1_6"
           }
         ],
         "go": [
@@ -3551,7 +3551,7 @@
           {
             "name": "stdlib",
             "purl": "",
-            "version": "v1.26.9"
+            "version": "v1.26.10"
           },
           {
             "name": "storj.io/common",
@@ -3606,9 +3606,9 @@
       }
     },
     "pkg-latest-aarch64": {
-      "app_version": "1.14.1_4",
+      "app_version": "1.14.1_5",
       "arch": "aarch64",
-      "generated": "2026-10-23T22:28:53Z",
+      "generated": "2026-11-03T08:41:03Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -3792,7 +3792,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p5"
+            "version": "15.1p6"
           },
           {
             "licenses": [
@@ -3855,14 +3855,14 @@
               "GPLv3"
             ],
             "name": "backrest",
-            "version": "1.14.1_4"
+            "version": "1.14.1_5"
           },
           {
             "licenses": [
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.131"
+            "version": "3.132"
           },
           {
             "licenses": [
@@ -3897,14 +3897,14 @@
               "MIT"
             ],
             "name": "rclone",
-            "version": "1.75.2"
+            "version": "1.75.2_1"
           },
           {
             "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "restic",
-            "version": "0.19.1_5"
+            "version": "0.19.1_6"
           }
         ],
         "go": [
@@ -5356,7 +5356,7 @@
           {
             "name": "stdlib",
             "purl": "",
-            "version": "v1.27.2"
+            "version": "v1.27.3"
           },
           {
             "name": "storj.io/common",
